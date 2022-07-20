@@ -1,14 +1,18 @@
-import _ from 'lodash';
 import './style.css';
+import  addScore  from './modules/eventListeners.js'
+import UI from './modules/UI.js'
 
-function component() {
-  const element = document.createElement('div');
+const submitBtn = document.getElementById('submit');
+const refreshBtn = document.getElementById('refresh');
 
-    // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  addScore()
+})
 
-  return element;
-}
+refreshBtn.addEventListener('click', () => {
+  Storage.removeInfo()
+  document.location.reload()
+})
 
-document.body.appendChild(component());
+document.addEventListener('DOMContentLoaded', UI.displayInfo)
