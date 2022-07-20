@@ -1,13 +1,13 @@
-import Player from "./Player.js";
-import UI from "./UI.js";
-import Storage from "./Storage.js";
+import Player from './Player.js';
+import UI from './UI.js';
+import Storage from './Storage.js';
 
 const scoreInput = document.getElementById('score');
 const nameInput = document.getElementById('name');
 
 const addScore = () => {
-  let nameValue = nameInput.value;
-  let scoreValue = scoreInput.value;
+  const nameValue = nameInput.value;
+  const scoreValue = scoreInput.value;
   if (nameValue && scoreValue) {
     const player = new Player(nameValue, scoreValue);
     Storage.addInfo(player);
@@ -16,6 +16,6 @@ const addScore = () => {
     scoreInput.value = '';
     nameInput.value = '';
   }
-}
+};
 
-export default addScore
+export default addScore;

@@ -1,5 +1,5 @@
-import Storage from "./Storage.js";
-import PlayersArr from "./playersArray.js";
+import Storage from './Storage.js';
+import PlayersArr from './playersArray.js';
 
 export default class UI {
   static displayInfo() {
@@ -9,7 +9,7 @@ export default class UI {
   }
 
   static addInfoCard(player) {
-    const playersList = document.getElementById('scores-list')
+    const playersList = document.getElementById('scores-list');
 
     const playerInfo = document.createElement('div');
     playerInfo.className = 'player';

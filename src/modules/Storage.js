@@ -1,4 +1,4 @@
-import PlayersArr from "./playersArray.js";
+import PlayersArr from './playersArray.js';
 
 export default class Storage {
   static getInfo() {
@@ -12,13 +12,11 @@ export default class Storage {
   }
 
   static addInfo(player) {
-
     PlayersArr.players.push(player);
     localStorage.setItem('players', JSON.stringify(PlayersArr.players));
   }
 
   static removeInfo() {
-    localStorage.removeItem('players')
-    
+    localStorage.removeItem('players');
   }
 }
