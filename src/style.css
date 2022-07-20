@@ -1,7 +1,80 @@
-body {
-  background-color: lightblue;
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
-.hello {
-  color: purple;
+body {
+  background-color: #eeee;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header {
+  padding: 1rem 3rem;
+}
+
+#sections-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-container h2 {
+  margin: 0;
+}
+
+#list,
+#add {
+  width: 40%;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#add-form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#refresh {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 60px;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+  align-self: end;
+}
+
+#scores-list {
+  width: 100%;
+  border: 2px solid #555;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  background-color: #fefaf7;
+  font-size: 14px;
+  gap: 1rem;
+}
+
+#scores-list .player:nth-child(2n+2) {
+  background-color: rgb(151, 151, 151);
 }
