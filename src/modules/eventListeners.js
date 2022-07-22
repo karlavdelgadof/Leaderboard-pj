@@ -1,6 +1,4 @@
-import Player from './Player.js';
-import UI from './UI.js';
-import Storage from './Storage.js';
+import gameAPI from './API.js';
 
 const scoreInput = document.getElementById('score');
 const nameInput = document.getElementById('name');
@@ -9,10 +7,7 @@ const addScore = () => {
   const nameValue = nameInput.value;
   const scoreValue = scoreInput.value;
   if (nameValue && scoreValue) {
-    const player = new Player(nameValue, scoreValue);
-    Storage.addInfo(player);
-    UI.addInfoCard(player);
-
+    gameAPI.sendInfo(nameValue, scoreValue);
     scoreInput.value = '';
     nameInput.value = '';
   }

@@ -1,11 +1,13 @@
 import Storage from './Storage.js';
-import PlayersArr from './playersArray.js';
 
 export default class UI {
-  static displayInfo() {
-    PlayersArr.players = Storage.getInfo();
+  static async displayInfo() {
+    const players = await Storage.getInfo();
+    for (let i = 0; i < players.length; i += 1) {
+      players[i].id = i + 1;
+    }
 
-    PlayersArr.players.forEach((player) => UI.addInfoCard(player));
+    players.forEach((player) => UI.addInfoCard(player));
   }
 
   static addInfoCard(player) {
@@ -15,7 +17,7 @@ export default class UI {
     playerInfo.className = 'player';
 
     const pName = document.createElement('h3');
-    pName.textContent = `${player.name}:`;
+    pName.textContent = `${player.user}:`;
     playerInfo.appendChild(pName);
 
     const pScore = document.createElement('h3');
@@ -23,5 +25,10 @@ export default class UI {
     playerInfo.appendChild(pScore);
 
     playersList.appendChild(playerInfo);
+  }
+
+  static deleteList() {
+    const playersList = document.getElementById('scores-list');
+    playersList.innerHTML = '';
   }
 }
