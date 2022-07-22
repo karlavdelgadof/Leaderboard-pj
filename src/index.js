@@ -10,11 +10,11 @@ addForm.addEventListener('submit', (e) => {
   addScore();
 });
 
-refreshBtn.addEventListener('click', (e) => {
+refreshBtn.addEventListener('click', () => {
   UI.deleteList();
-  document.location.reload()
+  document.location.reload();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  UI.displayInfo()
+  UI.displayInfo();
 });
