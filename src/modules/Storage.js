@@ -1,22 +1,16 @@
-import PlayersArr from './playersArray.js';
-
 export default class Storage {
-  static getInfo() {
-    if (localStorage.getItem('players') === null) {
-      PlayersArr.players = [];
-    } else {
-      PlayersArr.players = JSON.parse(localStorage.getItem('players'));
-    }
+  static async getInfo() {
+    const gameID = '5mywgelAua12rtJ5HTv1';
+    const gameData = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores/`);
+    const response = await gameData.json();
+    const players = response.result;
+    const playersSorted = players.sort((a, b) => b.score - a.score);
 
-    return PlayersArr.players;
+    return playersSorted;
   }
 
   static addInfo(player) {
-    PlayersArr.players.push(player);
-    localStorage.setItem('players', JSON.stringify(PlayersArr.players));
-  }
-
-  static removeInfo() {
-    localStorage.removeItem('players');
+    const players = Storage.getInfo();
+    players.push(player);
   }
 }

@@ -2,17 +2,19 @@ import './style.css';
 import addScore from './modules/eventListeners.js';
 import UI from './modules/UI.js';
 
-const submitBtn = document.getElementById('submit');
+const addForm = document.getElementById('add-form');
 const refreshBtn = document.getElementById('refresh');
 
-submitBtn.addEventListener('click', (e) => {
+addForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addScore();
 });
 
 refreshBtn.addEventListener('click', () => {
-  Storage.removeInfo();
+  UI.deleteList();
   document.location.reload();
 });
 
-document.addEventListener('DOMContentLoaded', UI.displayInfo);
+document.addEventListener('DOMContentLoaded', () => {
+  UI.displayInfo();
+});
