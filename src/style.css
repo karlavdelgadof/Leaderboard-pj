@@ -1,24 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
 * {
   text-decoration: none;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #eeee;
+  background-image: url('./multimedia/bg.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
+  height: 100vh;
+  padding-top: 8rem;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
 header {
+  font-family: 'Faster One', cursive;
   padding: 1rem 3rem;
+  background-image: linear-gradient(90deg, rgb(225, 29, 116) 30%, rgb(139, 255, 255) 50%, rgb(0, 250, 172), rgb(88, 228, 129));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  text-shadow: 5px 0 rgb(139, 255, 255), -5px 0 rgb(139, 255, 255), 0 5px rgb(139, 255, 255), 0 -5px rgb(139, 255, 255), 5px 5px rgb(139, 255, 255), -5px -5px rgb(139, 255, 255), 5px -5px rgb(139, 255, 255), -5px 5px rgb(139, 255, 255);
 }
 
 #sections-container {
   display: flex;
   justify-content: center;
   gap: 5rem;
+  width: 100%;
 }
 
 #header-container {
@@ -29,11 +52,14 @@ header {
 
 #header-container h2 {
   margin: 0;
+  color: rgb(225, 29, 116);
 }
 
 #list,
 #add {
   width: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 #list {
@@ -49,32 +75,48 @@ header {
   gap: 1rem;
 }
 
+#add-form h2 {
+  color: rgb(225, 29, 116);
+}
+
 #refresh {
   display: flex;
   align-items: center;
 }
 
 .button {
-  width: 60px;
   cursor: pointer;
-  padding: 0.25em 0.5em;
+  padding: 0.5em 0.75em;
   align-self: end;
+  border: 3px solid rgb(225, 29, 116);
+  border-radius: 5px;
+  background-color: rgb(0, 250, 172);
+  font-family: inherit;
+  color: rgb(225, 29, 116);
 }
 
 #scores-list {
   width: 100%;
-  border: 2px solid #555;
 }
 
 .player {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
-  background-color: #fefaf7;
+  padding: 1rem;
+  background-color: rgba(0, 250, 171, 0.547);
   font-size: 14px;
   gap: 1rem;
+  border: 2px solid rgb(0, 250, 172);
+  border-radius: 10px;
 }
 
 #scores-list .player:nth-child(2n+2) {
-  background-color: rgb(151, 151, 151);
+  background-color: rgba(225, 29, 117, 0.629);
+}
+
+input {
+  background-color: transparent;
+  border: 3px solid rgba(225, 29, 117, 0.629);
+  color: rgb(139, 255, 255);
+  font-weight: 600;
 }

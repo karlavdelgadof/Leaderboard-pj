@@ -6,7 +6,7 @@ export default class UI {
     for (let i = 0; i < players.length; i += 1) {
       players[i].id = i + 1;
     }
-
+    // Set timeout
     players.forEach((player) => UI.addInfoCard(player));
   }
 
