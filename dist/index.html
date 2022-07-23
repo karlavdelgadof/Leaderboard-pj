@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
     <title>Leaderboard App</title>
-  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <link rel="icon" href="assets/favicon.png"><script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
   <body>
     <header>
-      <h1>Leaderboard</h1>
+      <h1>Xeo Da-sh</h1>
     </header>
     <div id="sections-container">
       <section id="list">
         <div id="header-container">
-          <h2>Recent scores</h2>
+          <h2 class="section-header">Recent scores</h2>
           <button id="refresh" class="button" type="button">Refresh</button>
         </div>
         <div id="scores-list"></div>
       </section>
       <section id="add">
         <form id="add-form">
-          <h2>Add your score</h2>
+          <h2 class="section-header">Add your score</h2>
           <input id="name" placeholder="Your name" type="text" maxlength="10"/>
           <input id="score" placeholder="Your score" type="number" min="0" max="1000"/>
           <button id="submit" class="button" type="submit">Submit</button>
